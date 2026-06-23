@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/apirence.css">
+    <title>Formular ohne CSS</title>
+</head>
+<body>
+
+    <h1>Komplexes Formular</h1>
+
+    <form action="https://gibm.becknet.ch/formular/formular.php" method="post">
+    
+    <fieldset>
+        <legend>Persönliche Daten</legend>
+
+        <p>
+            <label for="fullname">Name *</label><br>
+            <input type="text" id="fullname" name="fullname" required minlength="2" maxlength="50" placeholder="Max Mustermann" size="30" autofocus>
+        </p>
+
+        <p>
+        <label for="bio">Langer Text *</label><br>
+        <textarea id="bio" name="bio" required minlength="10" maxlength="300" placeholder="Beschreibe dich kurz..." rows="5" cols="40"></textarea>
+        </p>
+
+        <p>
+            <label for="age">Alter *</label><br>
+            <input type="number" id="age" name="age" required min="1" max="120" value="18">
+        </p>
+
+        <p>
+            <label for="birthdate">Geburtsdatum *</label><br>
+            <input type="date" id="birthdate" name="birthdate" required>
+        </p>
+
+        <p>
+            <label for="password">Passwort *</label><br>
+            <input type="password" id="password" name="password" required minlength="8" maxlength="20" placeholder="Mindestens 8 Zeichen">
+        </p>
+
+        <p>
+            <label for="email">E-Mail *</label><br>
+            <input type="email" id="email" name="email" required placeholder="name@example.com">
+        </p>
+
+        <p>
+            <label for="website">URL</label><br>
+            <input type="url" id="website" name="website" placeholder="https://example.com">
+        </p>
+
+        <p>
+            <label for="phone">Telefon *</label><br>
+            <input type="tel" id="phone" name="phone" required placeholder="+41 79 123 45 67" pattern="^[0-9 +()/-]{6,20}$">
+        </p>
+
+        <p>
+            <label for="nickname">Spitzname (readonly)</label><br>
+            <input type="text" id="nickname" name="nickname" value="Gast123" readonly>
+        </p>
+
+        <p>
+            <label for="secret">Nicht bearbeitbar (disabled)</label><br>
+            <input type="text" id="secret" name="secret" value="Wird nicht gesendet" placeholder="u are a idion" disabled>
+        </p>
+    </fieldset>
+
+    <fieldset>
+        <legend>Auswahlfelder</legend>
+
+        <p>
+            <label for="country">Land *</label><br>
+            <select id="country" name="country" required>
+                <option value="">Bitte wählen</option>
+                <option value="ch">Schweiz</option>
+                <option value="de">Deutschland</option>
+                <option value="at">Österreich</option>
+            </select>
+        </p>
+
+      <p>Geschlecht *</p>
+        <p>
+            <label><input type="radio" name="gender" value="m" required> Männlich</label><br>
+            <label><input type="radio" name="gender" value="f"> Weiblich</label><br>
+            <label><input type="radio" name="gender" value="d"> Divers</label>
+        </p>
+
+        <p>Interessen (Mehrfachauswahl)</p>
+        <p>
+            <label><input type="checkbox" name="interests[]" value="html"> HTML</label><br>
+            <label><input type="checkbox" name="interests[]" value="css"> CSS</label><br>
+            <label><input type="checkbox" name="interests[]" value="js"> JavaScript</label>
+        </p>
+
+        <p>
+            <label for="education">Ausbildung *</label><br>
+            <select id="education" name="education" required>
+                <option value="">Bitte wählen</option>
+                <option value="schule">Schule</option>
+                <option value="lehre">Lehre</option>
+                <option value="matura">Matura</option>
+                <option value="studium">Studium</option>
+            </select>
+        </p>
+    </fieldset>
+
+    <fieldset>
+        <legend>Weitere Angaben</legend>
+
+        <p>
+            <label for="color">Lieblingsfarbe</label><br>
+            <input type="color" id="color" name="color" value="#1565c0">
+        </p>
+
+        <p>
+            <label for="range">Zufriedenheit</label><br>
+            <input type="range" id="range" name="satisfaction" min="0" max="10" value="7">
+        </p>
+
+        <p>
+            <label for="search">Suche</label><br>
+            <input type="search" id="search" name="search" placeholder="Suchbegriff">
+        </p>
+
+        <p>
+            <label for="readonlyNumber">Festwert</label><br>
+            <input type="number" id="readonlyNumber" name="readonlyNumber" value="42" readonly>
+        </p>
+
+        <p>
+            <label for="comment">Kommentar</label><br>
+            <textarea id="comment" name="comment" rows="4" cols="40" maxlength="200" placeholder="Optionaler Kommentar"></textarea>
+        </p>
+    </fieldset>
+
+    <p>
+        <label>
+        <input type="checkbox" name="terms" required>
+        Ich akzeptiere die Bedingungen *
+        </label>
+    </p>
+
+    <p>
+        <button type="submit">Senden</button>
+        <button type="reset">Zurücksetzen</button>
+    </p>
+
+    </form>
+
+</body>
+</html>
